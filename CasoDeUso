@@ -1,0 +1,23 @@
+@startuml Lanchonete
+left to right direction
+
+actor Atendente
+actor cliente
+
+Atendente --> cliente
+
+cliente -- (Fazer pedido)
+cliente -- (Acompanhar pedidos em tempo real)
+cliente -- (Realizar pagamentos)
+
+
+Atendente -- (Atualizar status do pedidos)
+Atendente -- (Enviar pedidos) 
+Atendente -- (Envia pedidos para a cozinha)
+
+
+
+
+
+
+
