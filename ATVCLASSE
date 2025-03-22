@@ -1,0 +1,50 @@
+@startuml Classe
+
+class Usuario{
+    -estadLogin: String   
+    -senha: String
+    -dataCadastro: String
+    +VerificarLogin()
+}
+
+class Cliente{
+    -numTelefone: String
+    -infoCartao
+    -email: String
+    -cpf: String
+    -infoCadastro: String
+    +Cadastrar()
+    +Logar()
+}
+
+Class Gerente{
+    -infoCadastro: String
+    +incluiCardapio()
+}
+
+Class Pedidos{
+    -dataDeEnvio: String
+    -numDeCliente: String
+    -numPedido: String
+    -endereço: String
+    +gerenciarPedidosDaConta()
+    +fazerPedido()
+}
+
+Class InformaçõesDoPedido{
+    -informaçãoDePedidos: String
+    +statusPedidos()
+}
+class Cardapio{
+    -Cardapio: String
+    +InfoCardapio()
+}
+
+
+Usuario ^-- Cliente
+Usuario ^-- Gerente
+Cliente *-- Pedidos
+Pedidos *-- InformaçõesDoPedido
+Cardapio o-- Cliente
+
+
