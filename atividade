@@ -1,0 +1,30 @@
+@startuml Atividade
+
+start
+:Fazer login;
+if(Login valido) 
+:Solicitar cadastro;
+stop
+else
+    
+    fork
+    :Ver lista de itens;
+    fork again
+    :Metados de pagamentos;
+    end fork
+    endif
+    :fazer pedidos;
+    if(metados de recebimentos)
+    :entrega;
+    else
+    :retirada;
+    endif
+    :Conferir status do pedido;
+    :Notificação de recebimento do pedido;
+    stop
+
+
+
+
+
+
