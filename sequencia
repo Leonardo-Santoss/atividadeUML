@@ -1,0 +1,34 @@
+@startuml Diagrama de Sequence
+
+
+actor usuario
+participant "Sistema" as Sistema
+participant "Atendente" as Atendente
+
+
+usuario -> Sistema: fazer login
+activate Sistema
+Sistema -> Sistema: Verificar login
+Sistema --> usuario: Login verificado
+
+usuario -> Sistema: Abrir cardapio
+Sistema --> usuario: Itens do cardapio
+
+usuario -> Sistema: Fazer pedidos
+Sistema -> Atendente: Pedido solicitado
+activate Atendente
+Atendente -> Cozinha: Pedido
+activate Cozinha
+Cozinha --> Atendente: Atualização dos pedidos
+Atendente --> Sistema: Atualizações do status do pedido
+Sistema --> usuario: Status do pedido
+Cozinha -> Atendente: Pedido
+Atendente --> Sistema: Pedido ja foi enviado
+Atendente -> usuario: Enviar pedido
+Sistema --> usuario: O pedido foi enviado ao seu destino
+Atendente -> Sistema: Registrar itens ao cardapio
+
+
+
+
+
